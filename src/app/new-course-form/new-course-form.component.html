@@ -1,17 +1,18 @@
+<div class="container">
 <form>
-  <div class="form-group">
     <input
     type="text"
     class="form-control"
-    (Keyup.enter)="addTopic()" #topic 
+    (Keyup.enter)="addTopic(topic)" #topic 
     />
-  </div>
- <button type="button" class="btn btn-info">submit</button>
+
   <ul class="list-group">
     <li 
-      *ngFor="let topic of form.get('topics').controls" 
+      *ngFor="let topic of topics.controls" 
+      (click)="removeTopic(topic)"
       class="list-group-item">
       {{ topic.value }}
     </li>
   </ul>
 </form>
+</div>
