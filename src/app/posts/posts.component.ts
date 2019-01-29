@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from '../services/post.service';
+import { AppError } from '../common/app.error';
+import { NotFoundError } from '../common/not-found-error';
+import { BadInput } from '../common/bad-input';
 
 @Component({
   selector: 'app-posts',
@@ -15,7 +18,7 @@ export class PostsComponent implements OnInit {
     this.service.getPosts()
     .subscribe(response => {
       this.posts = response;
-    })
+    });
   }
 
   createPost(input: HTMLInputElement){
@@ -27,14 +30,20 @@ export class PostsComponent implements OnInit {
     .subscribe(response => {
       post['id'] = response;
       this.posts.splice(0,0,post);
-    })
+    }, (error: AppError) => {
+      if (error instanceof BadInput){
+        // this.form.setErrors(error.originalError)
+      }
+      else
+        alert("unexpected")
+    });
   }
 
   updatePost(post) {
     this.service.updatePost(post)
     .subscribe(response => {
       console.log(response);
-    })
+    });
   }
   
   deletePost(post){
@@ -42,7 +51,12 @@ export class PostsComponent implements OnInit {
     .subscribe(response => {
       let index = this.posts.indexOf(post);
       this.posts.splice(index, 1)
-    })
+    },
+     (error: AppError) => { 
+      if (error instanceof NotFoundError)
+        alert("This post already been deleted")
+      else throw error;
+    });
   }
   
-}
+} 

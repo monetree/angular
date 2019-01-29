@@ -5,8 +5,9 @@
         <th>username</th>
         <th>email</th>
         <th>city</th>
-        <th>lat</th>
-        <th>lng</th>
+        <th>lat/lng</th>
+        <th>Company Name</th>
+        <th>Website</th>
       </tr>
     </thead>
     <tbody>
@@ -14,8 +15,9 @@
         <td>{{ user.name | uppercase }}</td>
         <td>{{ user.email }}</td>
         <td>{{ user.address.city }}</td>
-        <td>{{ user.address.geo.lat }}</td>
-        <td>{{ user.address.geo.lng }}</td>
+        <td>{{ user.address.geo.lat }} / {{ user.address.geo.lng }}</td>
+        <td>{{ user.company.name }}</td>
+        <td>http://{{ user.website }}</td>
       </tr>
     </tbody>
   </table>
