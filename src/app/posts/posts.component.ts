@@ -23,7 +23,6 @@ export class PostsComponent implements OnInit {
       title: input.value
     }
     input.value = '';
-
     this.service.createPost(post)
     .subscribe(response => {
       post['id'] = response;

@@ -10,6 +10,7 @@ import { FormBuilderComponent } from './form-builder/form-builder.component';
 import { PostsComponent } from './posts/posts.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PostService } from './services/post.service';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { PostService } from './services/post.service';
     ContactFormComponent,
     NewCourseFormComponent,
     FormBuilderComponent,
-    PostsComponent
+    PostsComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,

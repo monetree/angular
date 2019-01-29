@@ -1,0 +1,22 @@
+<div class="container">
+  <table class="table table-dark table-hover">
+    <thead>
+      <tr>
+        <th>username</th>
+        <th>email</th>
+        <th>city</th>
+        <th>lat</th>
+        <th>lng</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.name | uppercase }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.address.city }}</td>
+        <td>{{ user.address.geo.lat }}</td>
+        <td>{{ user.address.geo.lng }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
