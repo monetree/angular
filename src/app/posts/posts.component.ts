@@ -34,8 +34,7 @@ export class PostsComponent implements OnInit {
       if (error instanceof BadInput){
         // this.form.setErrors(error.originalError)
       }
-      else
-        alert("unexpected")
+      else throw error;
     });
   }
 
