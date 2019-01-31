@@ -1,0 +1,13 @@
+<nav class="navbar navbar-expand-sm bg-light">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/" routerLinkActive="active">home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/posts" routerLinkActive="active">posts</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/users" [queryParams]="{ page: 1, order: 'newest' }" routerLinkActive="active">users</a>
+    </li>
+  </ul>
+</nav>

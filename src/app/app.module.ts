@@ -12,6 +12,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { PostService } from './services/post.service';
 import { UserComponent } from './user/user.component';
 import { AppErrorHandler } from './common/app-error-handler';
+import { RouterModule } from '@angular/router';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { HomeComponent } from './home/home.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { LoginComponent } from './login/login.component';
+
+
 
 @NgModule({
   declarations: [
@@ -21,14 +28,19 @@ import { AppErrorHandler } from './common/app-error-handler';
     NewCourseFormComponent,
     FormBuilderComponent,
     PostsComponent,
-    UserComponent
+    UserComponent,
+    PageNotFoundComponent,
+    HomeComponent,
+    NavbarComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule
   ],
   providers: [
     PostService,
